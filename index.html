@@ -1,0 +1,632 @@
+<meta name="description" content="OOD survey page">
+<link rel="stylesheet" href="jemdoc.css" type="text/css">
+<title>Out-of-Distribution Generalization</title>
+
+<body>
+<div id="layout-content" style="margin-top:25px">
+
+<table>
+    <tbody>
+        <tr>
+            <td width="1000">
+                <div id="toptitle">
+                    <h1>Out-of-Distribution Generalization: Categories and Paper List  </h1>
+                </div>
+               
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h4>Builder & Current Maintainer: Jiashuo Liu<a href="http://ljsthu.github.io">(Page)</a></h4>
+<h4>Credit to THU-TAI Group</h4> 
+
+
+<h2>Overview</h2>
+<p>
+    We have summarized the main branches of works for Out-of-Distribution(OOD) Generalization problem, which are classified according to the research focus, including unsupervised representation learning, supervised learning
+    models and optimization methods. For more details, please refer to our survey on OOD generalization (coming soon). 
+</p>
+
+
+
+<h2>Branch 1: Unsupervised Representation Learning<small></small></h2>
+<h3>1.1 Disentangeled Representation Learning</h3>
+<ul>
+    <li>
+        beta-VAE: Learning basic visual concepts with a constrained variational framework.
+        Irina Higgins, Loic Matthey, Arka Pal, Christopher Burgess, Xavier Glorot, Matthew Botvinick, Shakir Mohamed, Alexander Lerchner(ICLR2017)<a href="http://openreview.net/forum?id=Sy2fzU9gl&noteId=Sy2fzU9gl">(paper)</a>
+    </li>
+    <li>
+        Disentangling by factorising.
+        Hyunjik Kim, Andriy Mnih(ICML2018)<a href="https://arxiv.org/abs/1802.05983">(papper)</a>
+    </li>
+    <li>
+        Challenging common assumptions in the unsupervised learning of disentangled representations. 	
+        Francesco Locatello, Stefan Bauer, Mario Lucic, Gunnar Ratsch, Sylvain Gelly, Bernhard Scholkopf, Olivier Bachem(ICML2019)<a href="https://arxiv.org/abs/1811.12359">(paper)</a>
+    </li>
+    <li>
+        Structure by Architecture: Disentangled Representations without Regularization.
+        Felix Leeb, Guilia Lanzillotta, Yashas Annadani, Michel Besserve, Stefan Bauer, Bernhard Scholkopf
+        <a href="https://arxiv.org/abs/2006.07796">(paper)</a>
+    </li>
+    <li>
+        On disentangled representations learned from correlated data.
+        Frederik Trauble, Elliot Creager, Niki Kilbertus, Francesco Locatello, Andrea Dittadi, Anirudh Goyal, Bernhard Scholkopf, Stefan Bauer(ICML2021)<a href="https://arxiv.org/abs/2006.07886">(paper)</a>
+    </li>
+    <li>
+        On the transfer of disentangled representations in realistic settings.
+        Andrea Dittadi, Frederik Trauble, Francesco Locatello, Manuel Wuthrich, Vaibhav Agrawal, Ole Winther, Stefan Bauer, Bernhard Scholkopf(ICLR2021)<a href="https://arxiv.org/abs/2010.14407">(paper)</a>
+    </li>
+</ul>
+<h3>1.2 Causal Representation Learning</h3>
+<ul>
+    <li>
+        CausalVAE: disentangled representation learning via neural structural causal models.
+        Mengyue Yang, Furui Liu, Zhitang Chen, Xinwei Shen, Jianye Hao, Jun Wang<a href="https://arxiv.org/abs/2004.08697">(paper)</a>   
+    </li>
+
+    <li>
+        Disentangled generative causal representation learning.
+        Xinwei Shen, Furui Liu, Hanze Dong, Qing Lian, Zhitang Chen, Tong Zhang(2020)<a href="https://arxiv.org/abs/2010.02637">(paper)</a>  
+    </li>
+
+    <li>
+        Variational autoencoders and nonlinear ica: A unifying framework.
+        Ilyes Khemakhem, Diederik P. Kingma, Ricardo Pio Monti, Aapo Hyvarinen(AISTATS2020)<a href="https://arxiv.org/abs/1907.04809">(paper)</a> (deleted in paper)  
+    </li>
+    <li>
+        Toward causal representation learning.
+        Bernhard Scholkopf, Francesco Locatello, Stefan Bauer, Nan Rosemary Ke, Nal Kalchbrenner, Anirudh Goyal, Yoshua Bengio(Proc. IEEE, 2021)<a href="https://arxiv.org/abs/2102.11107">(paper)</a>   
+    </li>
+</ul>
+
+<h4>Existing Surveys</h4>
+<ul>
+    <li>
+        Representation learning: A review and new perspectives. 
+        Yoshua Bengio, Aaron C. Courville, Pascal Vincent(TPAMI2013)<a href="https://arxiv.org/abs/1206.5538">(paper)</a>
+    </li>
+</ul>
+
+    
+<h2>Bracnch 2: Supervised Learning Models<small></small></h2>
+<h3>2.1 Causal Learning</h3>
+<ul>
+    <li>
+        Identification of causal effects using instrumental variables.
+        Hei Chan, Manabu Kuroki(AISTATS2010).
+    </li>
+    
+     <li>
+        Causal inference by using invariant prediction: identification and confidence intervals.
+        Jonas Peters, Peter Buhlmann, Nicolai Meinshausen(JRSS)<a href="https://arxiv.org/abs/1501.01332">(paper)</a>
+    </li>
+
+    <li>
+        Anchor regression: heterogeneous data meets causality.
+        Dominik Rothenhäusler, Nicolai Meinshausen, Peter Buhlmann, Jonas Peters<a href="https://arxiv.org/abs/1801.06229">(paper)</a>
+    </li>
+
+    <li>
+        Invariant Causal Prediction for Sequential Data.
+        Niklas Pfister, Peter Buhlmann, Jonas Peters<a href="https://arxiv.org/abs/1706.08058">(paper)</a>
+    </li>
+    <li>
+        Invariant Causal Prediction for Nonlinear Models.
+        Christina Heinze-Deml, Jonas Peters, Nicolai Meinshausen<a href="https://arxiv.org/abs/1706.08576">(paper)</a>
+    </li>
+    <li>
+        Active Invariant Causal Prediction: Experiment Selection through Stability.
+        Juan Gamella, Christina Heinze-Deml(NeurIPS2020).<a href="https://arxiv.org/abs/2006.05690">(paper)</a>
+    </li>
+    <li>
+        Regularizing towards Causal Invariance: Linear Models with Proxies.
+        Michael Oberst, Nikolaj Thams, Jonas Peters, David A. Sontag(ICML2021)<a href="https://arxiv.org/abs/2103.02477">(paper)</a>
+    </li>
+    <li>
+        Counterfactual Normalization: Proactively Addressing Dataset Shift and Improving Reliability Using Causal Mechanisms.
+        Adarsh Subbaswamy, Suchi Saria(2018).<a href="https://arxiv.org/abs/1808.03253">(paper)</a>
+    </li>
+    <li>
+        A Universal Hierarchy of Shift-Stable Distributions and the Tradeoff Between Stability and Performance.
+        Adarsh Subbaswamy, Bryant Chen, Suchi Saria<a href="https://arxiv.org/abs/1905.11374">(paper)</a>
+    </li>
+    <li>
+        Preventing Failures Due to Dataset Shift: Learning Predictive Models That Transport.
+        Adarsh Subbaswamy, Peter Schulam, Suchi Saria(AISTATS2019)<a href="https://arxiv.org/abs/1812.04597">(paper)</a>
+    </li>
+    <li>
+        Towards causality-aware predictions in static anticausal machine learning tasks: the linear structural causal model case.
+        Elias Chaibub Neto(NeurIPS2020 Workshop)<a href="https://arxiv.org/abs/2001.03998">(paper)</a>
+    </li>
+    <li>
+        I-SPEC: An End-to-End Framework for Learning Transportable, Shift-Stable Models.
+        Adarsh Subbaswamy, Suchi Saria(2020)<a href="https://arxiv.org/abs/2002.08948">(paper)</a>
+    </li>
+</ul>
+<h4>Invariant Learning</h4>
+<ul>
+    <li>
+        Invariant Risk Minimization.
+        Martin Arjovsky, Leon Bottou, Ishaan Gulrajani, David Lopez-Paz(2019)<a href="https://arxiv.org/abs/1907.02893">(paper)</a>
+    </li>
+    <li>
+        Invariant Risk Minimization Games.
+        Kartik Ahuja, Karthikeyan Shanmugam, Kush R. Varshney, Amit Dhurandhar(ICML2020)<a href="https://arxiv.org/abs/2002.04692">(paper)</a>
+    </li>
+    <li>Domain extrapolation via regret minimization.
+        Wengong Jin, Regina Barzilay, Tommi S. Jaakkola(2020)
+    </li>
+    <li>Risk variance penalization: From distributional robustness to causality.
+        Chuanlong Xie, Fei Chen, Yue Liu, Zhenguo Li(2020)
+    </li>
+    <li>
+        Empirical or invariant risk minimization? a sample complexity perspective.
+        Kartik Ahuja, Jun Wang, Amit Dhurandhar, Karthikeyan Shanmugam, Kush R. Varshney(ICLR2021)<a href="https://arxiv.org/abs/2010.16412">(paper)</a>
+    </li>
+    <li>
+        Does Invariant Risk Minimization Capture Invariance?
+        Pritish Kamath, Akilesh Tangella, Danica J. Sutherland, Nathan Srebro(AISTATS2021)<a href="https://arxiv.org/abs/2101.01134">(paper)</a>
+    </li>
+    <li>
+        The risks of invariant risk minimization.
+        Elan Rosenfeld, Pradeep Kumar Ravikumar, Andrej Risteski(ICLR2021)<a href="https://arxiv.org/abs/2010.05761">(paper)</a>
+    </li>
+    <li>
+        Out-of-distribution generalization via risk extrapolation (REx).
+        David Krueger, Ethan Caballero, Jorn-Henrik Jacobsen, Amy Zhang, Jonathan Binas, Dinghuai Zhang, Remi Le Priol, Aaron C. Courville(ICML2021)<a href="https://arxiv.org/abs/2003.00688">(paper)</a>
+    </li>
+    <li>Domain Generalization using Causal Matching.
+        Divyat Mahajan, Shruti Tople, Amit Sharma(ICML2021)<a href="https://arxiv.org/abs/2006.07500">(paper)</a>
+    </li>
+    
+    <li>
+        Environment Inference for Invariant Learning.
+        Elliot Creager, Jorn-Henrik Jacobsen, Richard S. Zemel(ICML2021)<a href="https://arxiv.org/abs/2010.07249">(paper)</a>
+    </li>
+    <li>
+        Nonlinear invariant risk minimization: A causal approach.
+        Chaochao Lu, Yuhuai Wu, Jose Miguel Hernández-Lobato, Bernhard Scholkopf<a href="https://arxiv.org/abs/2102.12353">(paper)</a> (deleted in paper)  
+    </li>
+</ul>    
+
+
+<h3>2.2 Domain Generalization</h3>
+<ul>
+    <li>A theory of learning from different domains.
+        Shai Ben-David, John Blitzer, Koby Crammer, Alex Kulesza, Fernando Pereira, Jennifer Wortman Vaughan(Mach. Learn. 2010)<a href="">(paper)</a>
+    </li>
+    <li>Deeper, broader and artier domain generalization.
+        Da Li, Yongxin Yang, Yi-Zhe Song, Timothy M. Hospedales(ICCV2017)<a href="https://arxiv.org/abs/1710.03077">(paper)</a>
+    </li>
+   
+</ul>
+
+<h4>Representation</h4>
+<ul>  
+    <li>Domain generalization via invariant feature representation.
+        Krikamol Muandet, David Balduzzi, Bernhard Scholkopf(ICML2013)<a href="https://arxiv.org/abs/1301.2115">(paper)</a>
+    </li>
+    <li>Deep domain confusion: Maximizing for domain invariance.
+        Eric Tzeng, Judy Hoffman, Ning Zhang, Kate Saenko, Trevor Darrell(2014)<a href="https://arxiv.org/abs/1412.3474">(paper)</a>
+    </li>
+    <li>Unsupervised domain adaptation by backpropagation.
+        Yaroslav Ganin, Victor S. Lempitsky(ICML2015)<a href="https://arxiv.org/abs/1409.7495">(paper)</a>
+    </li>
+    <li>Batch normalization: Accelerating deep network training by reducing internal covariate shift.
+        Sergey Ioffe, Christian Szegedy(ICML2015)<a href="https://arxiv.org/abs/1502.03167">(paper)</a>
+    </li>
+    <li>Domain generalization based on transfer component analysis.
+        Thomas Grubinger, Adriana Birlutiu, Holger Schoner, Thomas Natschläger, Tom Heskes(IWANN2015)
+    </li>
+    <li>Learning attributes equals multi-source domain generalization.
+        Chuang Gan, Tianbao Yang, Boqing Gong(CVPR2016)<a href="https://arxiv.org/abs/1605.00743">(paper)</a>
+    </li>
+    <li>Robust domain generalisation by enforcing distribution invariance.
+        Sarah M. Erfani, Mahsa Baktashmotlagh, Masud Moshtaghi, Vinh Nguyen, Christopher Leckie, James Bailey, Kotagiri Ramamohanarao(IJCAI2016)
+    </li>
+    <li>Deep coral: Correlation alignment for deep domain adaptation.
+        Baochen Sun, Kate Saenko(ECCV Workshop 2016)<a href="https://arxiv.org/abs/1607.01719">(paper)</a>
+    </li>
+    <li>Return of frustratingly easy domain adaptation.
+        Baochen Sun, Jiashi Feng, Kate Saenko(AAAI2016)<a href="https://arxiv.org/abs/1511.05547">(paper)</a>
+    </li>
+    <li>Unified deep supervised domain adaptation and generalization.
+        Saeid Motiian, Marco Piccirilli, Donald A. Adjeroh, Gianfranco Doretto(ICCV2017)<a href="https://arxiv.org/abs/1709.10190">(paper)</a>
+    </li>
+    <li>Improved texture networks: Maximizing quality and diversity in feed-forward stylization and texture synthesis.
+        Dmitry Ulyanov, Andrea Vedaldi, Victor S. Lempitsky(CVPR2017)<a href="https://arxiv.org/abs/1701.02096">(paper)</a>
+    </li>
+    <li>Arbitrary style transfer in real-time with adaptive instance normalization.
+        Xun Huang, Serge J. Belongie(ICCV2017)<a href="https://arxiv.org/abs/1703.06868">(paper)</a>
+    </li>
+    <li>Scatter component analysis: A unified framework for domain adaptation and domain generalization.
+        Muhammad Ghifary, David Balduzzi, W. Bastiaan Kleijn, Mengjie Zhang(TPAMI2017)
+    </li>
+    <li>Batch-instance normalization for adaptively style-invariant neural networks.
+        Hyeonseob Nam, Hyo-Eun Kim(NeurIPS2018)<a href="https://arxiv.org/abs/1805.07925">(paper)</a>
+    </li>
+    <li>Generalizing across domains via cross-gradient training.
+        Shiv Shankar, Vihari Piratla, Soumen Chakrabarti, Siddhartha Chaudhuri, Preethi Jyothi, Sunita Sarawagi(ICLR2018)<a href="https://arxiv.org/abs/1804.10745">(paper)</a>
+    </li>
+    <li>Visual domain adaptation with manifold embedded distribution alignment.
+        Jindong Wang, Wenjie Feng, Yiqiang Chen, Han Yu, Meiyu Huang, Philip S. Yu(MM2018)<a href="https://arxiv.org/abs/1807.07258">(paper)</a>
+    </li>
+    <li>Synthetic to real adaptation with generative correlation alignment networks.
+        Xingchao Peng, Kate Saenko(WACV2018)<a href="https://arxiv.org/abs/1701.05524">(paper)</a>
+    </li>
+    <li>Two at once: Enhancing learning and generalization capacities via IBN-Net.
+        Xingang Pan, Ping Luo, Jianping Shi, Xiaoou Tang(ECCV2018)<a href="https://arxiv.org/abs/1807.09441">(paper)</a>
+    </li>
+    <li>Domain generalization via multidomain discriminant analysis.
+        Shoubo Hu, Kun Zhang, Zhitang Chen, Laiwan Chan(UAI2019)<a href="https://arxiv.org/abs/1907.11216">(paper)</a>
+    </li>
+    <li>Moment matching for multi-source domain adaptation.
+        Xingchao Peng, Qinxun Bai, Xide Xia, Zijun Huang, Kate Saenko, Bo Wang(ICCV2019)<a href="https://arxiv.org/abs/1812.01754">(paper)</a>
+    </li>
+    <li>Adversarial target-invariant representation learning for domain generalization.
+        Isabela Albuquerque, João Monteiro, Tiago H. Falk, Ioannis Mitliagkas(ECMLPKDD2019)<a href="https://arxiv.org/abs/1904.12543">(paper)</a>
+    </li>
+    <li>Domain generalization with adversarial feature learning.
+        Haoliang Li, Sinno Jialin Pan, Shiqi Wang, Alex C. Kot(CVPR 2018)
+    </li>
+    <li>Dlow: Domain flow for adaptation and generalization.
+        Rui Gong, Wen Li, Yuhua Chen, Luc Van Gool(CVPR2019)<a href="https://arxiv.org/abs/1812.05418">(paper)</a>
+    </li>
+    <li>Multi-adversarial discriminative deep domain generalization for face presentation attack detection.
+        Rui Shao, Xiangyuan Lan, Jiawei Li, Pong C. Yuen(CVPR2019)
+    </li>
+    <li>Correlation-aware adversarial domain adaptation and generalization
+        Mohammad Mahfujur Rahman, Clinton Fookes, Mahsa Baktashmotlagh, Sridha Sridharan(PR2020)<a href="https://arxiv.org/abs/1911.12983">(paper)</a>
+    </li>
+    <li>Unseen target stance detection with adversarial domain generalization.
+        Zhen Wang, Qiansheng Wang, Chengguo Lv, Xue Cao, Guohong Fu(IJCNN2020)<a href="https://arxiv.org/abs/2010.05471">(paper)</a>
+    </li>
+    <li>Single-Side domain generalization for face anti-spoofing.
+        Yunpei Jia, Jie Zhang, Shiguang Shan, Xilin Chen(CVPR2020)<a href="https://arxiv.org/abs/2004.14043">(paper)</a>
+    </li>
+    <li>Domain generalization via entropy regularization.
+        Shanshan Zhao, Mingming Gong, Tongliang Liu, Huan Fu, Dacheng Tao(NeurIPS2020)
+    </li>
+    <li>Style normalization and restitution for generalizable person re-identification.
+        Xin Jin, Cuiling Lan, Wenjun Zeng, Zhibo Chen, Li Zhang(CVPR2020)<a href="https://arxiv.org/abs/2005.11037">(paper)</a>
+    </li>
+    <li>Transfer learning with dynamic distribution adaptation.
+        Jindong Wang, Yiqiang Chen, Wenjie Feng, Han Yu, Meiyu Huang, Qiang Yang(TIST 2020)<a href="https://arxiv.org/abs/1909.08531">(paper)</a>
+    </li>
+    <li>Style Normalization and Restitution for Domain Generalization and Adaptation.
+        Xin Jin, Cuiling Lan, Wenjun Zeng, Zhibo Chen(2021)<a href="https://arxiv.org/abs/2101.00588">(paper)</a>
+    </li>
+    
+    <li>Domain generalization by marginal transfer learning.
+        Gilles Blanchard, Aniket Anand Deshmukh, urun Dogan, Gyemin Lee, Clayton Scott(JMLR2021)<a href="https://arxiv.org/abs/1711.07910">(paper)</a>
+    </li>
+    <li>Learn to expect the unexpected: Probably approximately correct domain generalization.
+        Vikas K. Garg, Adam Tauman Kalai, Katrina Ligett, Zhiwei Steven Wu(AISTATS2021)<a href="https://arxiv.org/abs/2002.05660">(paper)</a>
+    </li>
+    <li>Domain adversarial neural networks for domain generalization: When it works and how to improve.
+        Anthony Sicilia, Xingchen Zhao, Seong Jae Hwang(2021)<a href="https://arxiv.org/abs/2102.03924">(paper)</a>
+    </li>
+    
+    
+    
+</ul>
+
+
+<h4>Training Strategy</h4>
+<ul>
+    <li>Feature space independent semi-supervised domain adaptation via kernel matching.
+        Min Xiao, Yuhong Guo(TPAMI2015)
+    </li>
+    <li>Unsupervised learning of visual representations by solving jigsaw puzzles.
+        Mehdi Noroozi, Paolo Favaro(ECCV 2016)<a href="https://arxiv.org/abs/1603.09246">(paper)</a>
+    </li>
+    <li>Model-agnostic meta-learning for fast adaptation of deep networks.
+        Chelsea Finn, Pieter Abbeel, Sergey Levine(ICML2017)<a href="https://arxiv.org/abs/1703.03400">(paper)</a>
+    </li>
+    <li>Domain randomization for transferring deep neural networks from simulation to the real world.
+        Josh Tobin, Rachel Fong, Alex Ray, Jonas Schneider, Wojciech Zaremba, Pieter Abbeel(IROS2017)<a href="https://arxiv.org/abs/1703.06907">(paper)</a>
+    </li>
+    <li>Learning to generalize: Meta-learning for domain generalization.
+        Da Li, Yongxin Yang, Yi-Zhe Song, Timothy M. Hospedales(AAAI2018)<a href="https://arxiv.org/abs/1710.03463">(paper)</a>
+    </li>
+    <li>Domain generalization with domain-specific aggregation modules.
+        Antonio D'Innocente, Barbara Caputo(2018)<a href="https://arxiv.org/abs/1809.10966">(paper)</a>
+    </li>
+    <li>Deep domain generalization with structured low-rank constraint.
+        Zhengming Ding, Yun Fu(TIP2018)
+    </li>
+    <li>Best sources forward: domain generalization through source-specific nets.
+        Massimiliano Mancini, Samuel Rota Bulò, Barbara Caputo, Elisa Ricci(ICIP2018)<a href="https://arxiv.org/abs/1806.05810">(paper)</a>
+    </li>
+    <li>Metareg: Towards domain generalization using meta-regularization.
+        Yogesh Balaji, Swami Sankaranarayanan, Rama Chellappa(NeurIPS2018)
+    </li>
+    <li>Generalizing to unseen domains via adversarial data augmentation.
+        Riccardo Volpi, Hongseok Namkoong, Ozan Sener, John C. Duchi, Vittorio Murino, Silvio Savarese(NeurIPS2018)<a href="https://arxiv.org/abs/1805.12018">(paper)</a>
+    </li>
+    <li>Sim-to-real transfer of robotic control with dynamics randomization.
+        Xue Bin Peng, Marcin Andrychowicz, Wojciech Zaremba, Pieter Abbeel(ICRA2018)<a href="https://arxiv.org/abs/1710.06537">(paper)</a>
+    </li>
+    <li>Training deep networks with synthetic data: Bridging the reality gap by domain randomization.
+        Jonathan Tremblay, Aayush Prakash, David Acuna, Mark Brophy, Varun Jampani, Cem Anil, Thang To, Eric Cameracci, Shaad Boochoon, Stan Birchfield(CVPR Workshop2018)<a href="https://arxiv.org/abs/1804.06516">(paper)</a>
+    </li>
+    <li>Domain randomization for scene-specific car detection and pose estimation.
+        Rawal Khirodkar, Donghyun Yoo, Kris M. Kitani(WACV2019)<a href="https://arxiv.org/abs/1811.05939">(paper)</a>
+    </li>
+    <li>Multi-component image translation for deep domain generalization.
+        Mohammad Mahfujur Rahman, Clinton Fookes, Mahsa Baktashmotlagh, Sridha Sridharan(WACV2019)<a href="https://arxiv.org/abs/1812.08974">(paper)</a>
+    </li>
+    <li>Domain randomization and pyramid consistency: Simulation-to-real generalization without accessing target domain data.
+        Xiangyu Yue, Yang Zhang, Sicheng Zhao, Alberto L. Sangiovanni-Vincentelli, Kurt Keutzer, Boqing Gong(ICCV2019)<a href="https://arxiv.org/abs/1909.00889">(paper)</a>
+    </li>
+    <li>Structured domain randomization: Bridging the reality gap by context-aware synthetic data.
+        Aayush Prakash, Shaad Boochoon, Mark Brophy, David Acuna, Eric Cameracci, Gavriel State, Omer Shapira, Stan Birchfield(ICRA2019)<a href="https://arxiv.org/abs/1810.10093">(paper)</a>
+    </li>
+    <li>Feature-critic networks for heterogeneous domain generalization.
+        Yiying Li, Yongxin Yang, Wei Zhou, Timothy M. Hospedales(ICML2019)<a href="https://arxiv.org/abs/1901.11448">(paper)</a>
+    </li>
+    <li>Domain generalization by solving jigsaw puzzles.
+        Fabio Maria Carlucci, Antonio D'Innocente, Silvia Bucci, Barbara Caputo, Tatiana Tommasi(CVPR2019)<a href="https://arxiv.org/abs/1903.06864">(paper)</a>
+    </li>
+    <li>Domain generalization via model-agnostic learning of semantic features.
+        Qi Dou, Daniel Coelho de Castro, Konstantinos Kamnitsas, Ben Glocker(NeurIPS2019)<a href="https://arxiv.org/abs/1910.13580">(paper)</a>
+    </li>
+    <li>Domain generalization with optimal transport and metric learning.
+        Fan Zhou, Zhuqing Jiang, Changjian Shui, Boyu Wang, Brahim Chaib-draa(2020)<a href="https://arxiv.org/abs/2007.10573">(paper)</a>
+    </li>
+    
+    <li>Deep semisupervised domain generalization network for rotary machinery fault diagnosis under variable speed.
+        Yixiao Liao, Ruyi Huang, Jipu Li, Zhuyun Chen, Weihua Li( IEEE TIM2020)
+    </li>
+    <li>Unsupervised domain adaptation through self-supervision.
+        Fei Pan, Inkyu Shin, François Rameau, Seokju Lee, In So Kweon(CVPR2020)<a href="https://arxiv.org/abs/1909.11825">(paper)</a>
+    </li>
+   
+    <li>Shape-aware meta-learning for generalizing prostate MRI segmentation to unseen domains.
+        Quande Liu, Qi Dou, Pheng-Ann Heng(MICCAI2020)<a href="https://arxiv.org/abs/2007.02035">(paper)</a>
+    </li>
+    <li>Learning to learn with variational information bottleneck for domain generalization.
+        Ying-Jun Du, Jun Xu, Huan Xiong, Qiang Qiu, Xiantong Zhen, Cees G. M. Snoek, Ling Shao(ECCV2020)<a href="https://arxiv.org/abs/2007.07645">(paper)</a>
+    </li>
+    
+    <li>Learning to generalize unseen domains via memory-based multi-source meta-learning for person re-identification.
+        Yuyang Zhao, Zhun Zhong, Fengxiang Yang, Zhiming Luo, Yaojin Lin, Shaozi Li, Nicu Sebe(CVPR2021)<a href="https://arxiv.org/abs/2012.00417">(paper)</a>
+    </li>
+    
+    <li>Meta Batch-Instance Normalization for Generalizable Person Re-Identification.
+        Seokeon Choi, Taekyung Kim, Minki Jeong, Hyoungseob Park, Changick Kim(CVPR2021)<a href="https://arxiv.org/abs/2011.14670">(paper)</a>
+    </li>
+    <li>Dofe: Domain-oriented feature embedding for generalizable fundus image segmentation on unseen datasets.
+        Shujun Wang, Lequan Yu, Kang Li, Xin Yang, Chi-Wing Fu, Pheng-Ann Heng(TMI2020)<a href="https://arxiv.org/abs/2010.06208">(paper)</a>
+    </li>
+    <li>Batch normalization embeddings for deep domain generalization.
+        Mattia Segù, Alessio Tonioni, Federico Tombari(2020)<a href="https://arxiv.org/abs/2011.12672">(paper)</a>
+    </li>
+    <li>Generalized convolutional forest networks for domain generalization and visual recognition.
+        Jongbin Ryu, Gitaek Kwon, Ming-Hsuan Yang, Jongwoo Lim(ICLR2020)
+    </li>
+    <li>Episodic training for domain generalization.
+        Bincheng Huang, Si Chen, Fan Zhou, Cheng Zhang, Feng Zhang(ICCSIP2020)<a href="https://arxiv.org/abs/1902.00113">(paper)</a>
+    </li>
+    <li>Self-challenging improves cross-domain generalization.
+        Zeyi Huang, Haohan Wang, Eric P. Xing, Dong Huang(ECCV2020)<a href="https://arxiv.org/abs/2007.02454">(paper)</a>
+    </li>
+    <li>Learning to learn single domain generalization.
+        Fengchun Qiao, Long Zhao, Xi Peng(CVPR2020)<a href="https://arxiv.org/abs/2003.13216">(paper)</a>
+    </li>
+    <li>Learning to generate novel domains for domain generalization.
+        Kaiyang Zhou, Yongxin Yang, Timothy M. Hospedales, Tao Xiang(ECCV2020)<a href="https://arxiv.org/abs/2007.03304">(paper)</a>
+    </li>
+    <li>Frustratingly simple domain generalization via image stylization.
+        Nathan Somavarapu, Chih-Yao Ma, Zsolt Kira(2020)<a href="https://arxiv.org/abs/2006.11207">(paper)</a>
+    </li>
+    
+    <li>Deep domain-adversarial image generation for domain generalisation.
+        Kaiyang Zhou, Yongxin Yang, Timothy M. Hospedales, Tao Xiang(AAAI2020)<a href="https://arxiv.org/abs/2003.06054">(paper)</a>
+    </li>
+    <li>Metanorm: Learning to normalize few-shot batches across domains.
+        Ying-Jun Du, Xiantong Zhen, Ling Shao, Cees G. M. Snoek(ICLR2021)
+    </li>
+    <li>Domain-Irrelevant Representation Learning for Unsupervised Domain Generalization.
+        Xingxuan Zhang, Linjun Zhou, Renzhe Xu, Peng Cui, Zheyan Shen, Haoxin Liu(2021)<a href="https://arxiv.org/abs/2107.06219">(paper)</a>
+    </li>
+    <li>Frustratingly easy semi-supervised domain adaptation</li>
+    
+    <li>Staining invariant features for improving generalization of deep convolutional neural networks in computational pathology</li>
+    
+   
+</ul>
+
+<h4>Existing Surveys</h4>
+<ul>
+    <li>
+        A survey on transfer learning.
+        Sinno Jialin Pan, Qiang Yang(TKDE2010)<a href="">(paper)</a>
+    </li>
+    <li>Meta-learning in neural networks: A survey.
+        Timothy M. Hospedales, Antreas Antoniou, Paul Micaelli, Amos J. Storkey(2020)<a href="https://arxiv.org/abs/2004.05439">(paper)</a>
+    </li>
+    <li>Generalizing to Unseen Domains: A Survey on Domain Generalization.
+        Jindong Wang, Cuiling Lan, Chang Liu, Yidong Ouyang, Tao Qin(IJCAI2021)<a href="https://arxiv.org/abs/2103.03097">(paper)</a>
+    </li>
+    <li>Domain generalization in Vision: A survey.
+        Kaiyang Zhou, Ziwei Liu, Yu Qiao, Tao Xiang, Chen Change Loy(2021)<a href="https://arxiv.org/abs/2103.02503">(paper)</a>
+    </li>
+</ul>
+
+<h3>2.3 Stable Learning</h3>
+<ul>
+    <li>Causally Regularized Learning with Agnostic Data Selection Bias.
+        Zheyan Shen, Peng Cui, Kun Kuang, Bo Li, Peixuan Chen(MM2018)<a href="https://arxiv.org/abs/1708.06656">(paper)</a>
+    </li>
+    <li>
+        Stable Prediction across Unknown Environments.
+        Kun Kuang, Peng Cui, Susan Athey, Ruoxuan Xiong and Bo Li(KDD2018)<a href="https://arxiv.org/abs/1806.06270">(paper)</a>
+    </li>
+    <li>
+        Stable Prediction with Model Misspecification and Agnostic Distribution Shift.
+        Kun Kuang, Ruoxuan Xiong, Peng Cui, Susan Athey, Bo Li(AAAI2020)<a href="https://arxiv.org/abs/2001.11713">(paper)</a>
+    </li>
+    <li>
+        Stable Learning via Sample Reweighting.
+        Zheyan Shen, Peng Cui, Tong Zhang, Kun Kuang(AAAI2020)<a href="https://arxiv.org/abs/1911.12580">(paper)</a>
+    </li>
+    <li>
+        Stable Learning via Differentiated Variable Decorrelation.
+        Zheyean Shen, Peng Cui, Jiashuo Liu, Tong Zhang, Bo Li and Zhitang Chen(KDD2020)<a href="http://pengcui.thumedialab.com/papers/Stable_DVD.pdf">(paper)</a>
+    </li>
+
+    <li>
+        Decorrelated Clustering with Data Selection Bias.
+        Xiao Wang, Shaohua Fan, Kun Kuang, Chuan Shi, Jiawei Liu, Bai Wang(IJCAI2020)<a href="https://www.ijcai.org/proceedings/2020/301">(paper)</a>
+    </li>
+
+    <li>
+        DeVLBert: Learning Deconfounded Visio-Linguistic Representations.
+        Shengyu Zhang, Tan Jiang, Tan Wang, Kun Kuang, Zhou Zhao, Jianke Zhu, Jin Yu, Hongxia Yang, Fei Wu(MM2020)<a href="https://arxiv.org/abs/2008.06884">(paper)</a>
+    </li>
+
+    <li>
+        Meta-Learning Causal Feature Selection for Stable Prediction.
+        Zhaoquan Yuan, Xiao Peng, Xiao Wu, Bing-kun Bao, Changsheng Xu(ICME 2021)<a href="https://ieeexplore.ieee.org/abstract/document/9428205">(paper)</a>
+    </li>
+
+    <li>
+        Deep Stable Learning for Out-Of-Distribution Generalization.
+        Xingxuan Zhang, Peng Cui, Renzhe Xu, Linjun Zhou, Yue He, Zheyan Shen(CVPR2021)<a href="https://arxiv.org/abs/2104.07876">(paper)</a>
+    </li>
+
+    <li>
+        Balance-Subsampled Stable Prediction.
+        Kun Kuang, Hengtao Zhang, Fei Wu, Yueting Zhuang, Aijun Zhang <a href="https://arxiv.org/abs/2006.04381">(paper)</a>
+    </li>
+</ul>
+
+<h4>Existing Surveys</h4>
+<ul>
+    <li>
+        Invariance, causality and robustness.
+        Peter Buhlmann<a href="https://arxiv.org/abs/1812.08233">(paper)</a>
+    </li>
+</ul>
+
+
+<h2>Branch 3: Optimization<small></small></h2>
+   
+<h3>3.1 Distributionally Robust Optimization</h3>
+<ul>
+    <li>Robust Regression and Lasso.
+        Huan Xu, Constantine Caramanis, Shie Mannor:(NeurIPS2008)<a href="https://arxiv.org/abs/0811.1790">(paper)</a>
+    </li>
+    <li>Distributionally Robust Optimization Under Moment Uncertainty with Application to Data-Driven Problems.
+        Erick Delage, Yinyu Ye(OR2010)
+    </li>
+    <li>A Unified Robust Regression Model for Lasso-like Algorithms.
+        Wenzhuo Yang, Huan Xu(ICML2013)
+    </li>
+    <li>Distributionally Robust Logistic Regression.
+        Soroosh Shafieezadeh-Abadeh, Peyman Mohajerin Esfahani, Daniel Kuhn(NeurIPS2015)<a href="https://arxiv.org/abs/1509.09259">(paper)</a>
+    </li>
+    <li>Stochastic Gradient Methods for Distributionally Robust Optimization with f-divergences.
+        Hongseok Namkoong, John C. Duchi(NeurIPS2016)
+    </li>
+    <li>Wasserstein distributional robustness and regularization in statistical learning.
+        Rui Gao, Xi Chen, Anton J. Kleywegt(2017)
+    </li>
+    <li>Characterization of the equivalence of robustification and regularization in linear and matrix regression.
+        Dimitris Bertsimas, Martin S. Copenhaver(EJOR2018)<a href="https://arxiv.org/abs/1411.6160">(paper)</a>
+    </li>
+    <li>Learning models with uniform performance via distributionally robust optimization.
+        John C. Duchi, Hongseok Namkoong(2018)<a href="https://arxiv.org/abs/1810.08750">(paper)</a>
+    </li>
+    <li>Certifying Some Distributional Robustness with Principled Adversarial Training.
+        Aman Sinha, Hongseok Namkoong, John C. Duchi(ICLR2018)<a href="https://arxiv.org/abs/1710.10571">(paper)</a>
+    </li>
+    <li>A robust learning approach for regression models based on distributionally robust optimization.
+        Ruidi Chen, Ioannis Ch. Paschalidis(JMLR2018)
+    </li>
+    <li>Data-driven chance constrained stochastic program.
+        Ruiwei Jiang, Yongpei Guan(Math. Program. 2018)
+    </li>
+    <li>Data-driven robust optimization.
+        Dimitris Bertsimas, Vishal Gupta, Nathan Kallus(Math. Program.2018)<a href="https://arxiv.org/abs/1401.0212">(paper)</a>
+    </li>
+    <li>Does distributionally robust supervised learning give robust classifiers?
+        Weihua Hu, Gang Niu, Issei Sato, Masashi Sugiyama(ICML2018)<a href="https://arxiv.org/abs/1611.02041">(paper)</a>
+    </li>
+    <li>Causality from a distributional robustness point of view.
+        Nicolai Meinshausen(DSW2018)
+    </li>
+    <li>Regularization via Mass Transportation.
+        Soroosh Shafieezadeh-Abadeh, Daniel Kuhn, Peyman Mohajerin Esfahani(JMLR2019)<a href="https://arxiv.org/abs/1710.10016">(paper)</a>
+    </li>
+    <li>Data-driven optimal transport cost selection for distributionally robust optimization.
+        Jose H. Blanchet, Yang Kang, Karthyek R. A. Murthy, Fan Zhang(WSC2019)
+    </li>
+    <li>Incorporating Unlabeled Data into Distributionally Robust Learning.
+        Charlie Frogner, Sebastian Claici, Edward Chien, Justin Solomon(2019)<a href="https://arxiv.org/abs/1912.07729">(paper)</a>
+    </li>
+    <li>Distributionally Robust Neural Networks for Group Shifts: On the Importance of Regularization for Worst-Case Generalization.
+        Shiori Sagawa, Pang Wei Koh, Tatsunori B. Hashimoto, Percy Liang(ICLR2020)<a href="https://arxiv.org/abs/1911.08731">(paper)</a>
+    </li>
+    <li>Stable Adversarial Learning under Distributional Shifts.
+        Jiashuo Liu, Zheyan Shen, Peng Cui, Linjun Zhou, Kun Kuang, Bo Li, Yishi Lin(AAAI2021)<a href="https://arxiv.org/abs/2006.04414">(paper)</a>
+    </li>
+   
+    <li>Robust Solutions to Least-Squares Problems with Uncertain Data.</li>
+
+    <li>Statistics of robust optimization: A generalized empirical likelihood approach.
+        John Duchi, Peter Glynn, Hongseok Namkoong <a href="https://arxiv.org/abs/1610.03425">(paper)</a>
+    </li>
+
+    <li>Distributionally robust losses against mixture covariate shifts.</li>
+
+    <li>Data-driven distributionally robust optimization using the Wasserstein
+        metric: performance guarantees and tractable reformulations.
+        Peyman Mohajerin Esfahani, Daniel Kuhn <a href="https://arxiv.org/abs/1505.05116"></a>
+    </li>
+
+    <li>Regression shrinkage and selection via the lasso: a retrospective.</li>
+</ul>
+<h4>Existing Surveys</h4>
+<ul>
+    
+    <li>
+        Distributionally robust optimization: A review.
+        Hamed Rahimian, Sanjay Mehrotra(2019)<a href="https://arxiv.org/abs/1908.05659">(paper)</a>
+    </li>
+</ul>
+
+
+<h3>3.2 Invariance-Based Optimization</h3>
+<ul>
+    <li>Invariant models for causal transfer learning.
+        Mateo Rojas-Carulla, Bernhard Scholkopf, Richard E. Turner, Jonas Peters(JMLR2018)<a href="https://arxiv.org/abs/1507.05333">(paper)</a>
+    </li>
+    <li>Invariant Rationalization.
+        Shiyu Chang, Yang Zhang, Mo Yu, Tommi S. Jaakkola(ICML2020)<a href="https://arxiv.org/abs/2003.09772">(paper)</a>
+    </li>
+    <li>Out-of-Distribution Generalization with Maximal Invariant Predictor.
+        Masanori Koyama, Shoichiro Yamaguchi(2020)
+    </li>
+    <li>Heterogeneous Risk Minimization.
+        Jiashuo Liu, Zheyuan Hu, Peng Cui, Bo Li, Zheyan Shen(ICML2021)<a href="https://arxiv.org/abs/2105.03818">(paper)</a>
+    </li>
+</ul>
+
+
+
+
+<div id="footer">
+    <div id="footer-text"></div>
+</div>
+
+</div>
+
+
+
+Last updated on August. 15, 2021. 
+(For problems, contact liujiashuo77@gmail.com. To add papers, please pull request at <a href="https://github.com/Out-of-Distribution-Generalization/Out-of-Distribution-Generalization.github.io">our repo</a>)
+</body></html>
